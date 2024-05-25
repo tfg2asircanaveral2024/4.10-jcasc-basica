@@ -1,0 +1,12 @@
+jenkins:
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: 'administrador'
+          # para definir la contraseña del administrador, debes utilizar la variable de entorno
+          # JENKINS_PASSWORD_ADMINISTRADOR, dándole el valor que consideres al ejecutar el 
+          # contenedor
+          password: ${JENKINS_PASSWORD_ADMINISTRADOR:-AdministradorTFG2024}
+          name: 'administrador'
+  authorizationStrategy: loggedInUsersCanDoAnything
